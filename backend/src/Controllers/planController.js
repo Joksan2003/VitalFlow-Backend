@@ -65,6 +65,23 @@ exports.generatePlan = async (req, res, next) => {
     const user = await User.findById(uid).lean();
     if (!user) return res.status(404).json({ ok: false, msg: 'Usuario no encontrado' });
 
+    // Bloqueo para evitar generar más de 1 plan cada 7 días
+    const lastPlan = await Plan.findOne({ userId: uid }).sort({ createdAt: -1 }).lean();
+
+    if (lastPlan && lastPlan.createdAt) {
+      const diffMs = Date.now() - new Date(lastPlan.createdAt).getTime();
+      const diffDays = diffMs / (1000 * 60 * 60 * 24);
+
+      if (!Number.isNaN(diffDays) && diffDays < 7) {
+        return res.status(400).json({
+          ok: false,
+          msg: `Solo puedes generar un plan cada 7 días. Intenta de nuevo en ${Math.ceil(
+            7 - diffDays
+          )} día(s).`,
+        });
+      }
+    }
+
     const prefs = req.body.preferences || {};
 
     // snippet para estilo (ayuda al modelo a generar títulos coherentes)
