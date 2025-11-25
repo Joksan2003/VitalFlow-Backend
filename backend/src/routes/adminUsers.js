@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 const auth = require("../Middleware/authMiddleware");
-const { requireRole } = require("../middleware/roleMiddleware"); // ya lo usas en otros lados
+const { requireRole } = require("../Middleware/roleMiddleware"); // ya lo usas en otros lados
 const userController = require("../controllers/userController");
 
 // Todas estas rutas requieren admin
