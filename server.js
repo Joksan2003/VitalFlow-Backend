@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 const adminUsersRoutes = require("./backend/src/routes/adminUsers");
 
 // Conectar a MongoDB
-//connectDB();
+connectDB();
 
 const allowedOrigins = [
   "http://localhost:5173",
