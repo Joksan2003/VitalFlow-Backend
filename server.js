@@ -14,7 +14,7 @@ connectDB();
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:4173",
-  "https://tu-frontend-en-produccion.com", // luego lo cambias
+  "https://vitalflow-front.onrender.com", // Link cambiado
 ];
 
 // Middlewares
