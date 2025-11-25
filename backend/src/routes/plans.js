@@ -2,8 +2,8 @@
 const express = require('express');
 const router = express.Router();
 const planController = require('../Controllers/planController');
-const auth = require('../middleware/authMiddleware');
-const { requireRole } = require('../middleware/roleMiddleware');
+const auth = require('../Middleware/authMiddleware');
+const { requireRole } = require('../Middleware/roleMiddleware');
 
 // 🧠 Generar un nuevo plan (usuario normal)
 router.post('/generate', auth, planController.generatePlan);

@@ -2,8 +2,8 @@
 const express = require('express');
 const router = express.Router();
 const { upload } = require('../utils/uploader');
-const userController = require('../controllers/userController');
-const authMiddleware = require('../middleware/authMiddleware');
+const userController = require('../Controllers/userController');
+const authMiddleware = require('..Middleware/authMiddleware');
 
 // multipart: certificate, cv optional
 const multi = upload.fields([{ name: 'certificate', maxCount: 1 }, { name: 'cv', maxCount: 1 }]);

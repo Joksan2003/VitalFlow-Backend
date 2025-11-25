@@ -1,9 +1,9 @@
 // src/routes/admin.js
 const express = require('express');
 const router = express.Router();
-const { requireRole } = require('../middleware/roleMiddleware');
-const adminController = require('../controllers/adminController');
-const authMiddleware = require('../middleware/authMiddleware');
+const { requireRole } = require('../Middleware/roleMiddleware');
+const adminController = require('../Controllers/adminController');
+const authMiddleware = require('../Middleware/authMiddleware');
 
 // all admin routes require admin role
 router.use(authMiddleware, requireRole(['admin']));

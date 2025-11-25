@@ -4,7 +4,7 @@ const router = express.Router();
 
 const auth = require("../Middleware/authMiddleware");
 const { requireRole } = require("../Middleware/roleMiddleware"); // ya lo usas en otros lados
-const userController = require("../controllers/userController");
+const userController = require("../Controllers/userController");
 
 // Todas estas rutas requieren admin
 router.get(

@@ -1,9 +1,9 @@
 // src/routes/user.js
 const express = require('express');
 const router = express.Router();
-const authMiddleware = require('../middleware/authMiddleware');
+const authMiddleware = require('../Middleware/authMiddleware');
 const { upload } = require('../utils/uploader'); // multer memory storage
-const userController = require('../controllers/userController');
+const userController = require('../Controllers/userController');
 
 // GET /api/user/me -> obtener perfil del usuario autenticado
 router.get('/me', authMiddleware, userController.getMe);
