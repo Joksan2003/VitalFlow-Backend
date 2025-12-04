@@ -1,4 +1,3 @@
-// backend/src/Controllers/planController.js
 const Plan = require('../models/Plan');
 const User = require('../models/user');
 const Recipe = require('../models/Recipe');
@@ -49,7 +48,7 @@ Eres un generador de planes alimenticios. Devuélveme estrictamente JSON con la 
 
 Reglas:
 - Devuelve únicamente JSON válido (sin texto extra).
-- Genera 7 días y 3 comidas por día (Desayuno/Almuerzo/Cena). Meriendas opcionales.
+- Genera 2 días y 3 comidas por día (Desayuno/Almuerzo/Cena). Meriendas opcionales.
 - Prioriza ingredientes locales y los que están en favouriteIngredients del usuario.
 - Nunca uses ingredientes que estén en allergies o dislikes.
 - Si no tienes un campo, devuelve null.
